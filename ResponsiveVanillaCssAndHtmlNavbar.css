@@ -1,1 +1,23 @@
 /* mobile first, make the media query for large screens, not small ones */
+
+
+/* top bar of the hamburger */
+#menu input:checked ~ span
+{
+    opacity:1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: green;
+}
+
+/* middle bar of the hamburger */
+#menu input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/* bottom bar of the hamburger */
+#menu input:checked ~ span:nth-last-child(2)
+{
+    transform: rotate(-45deg) translate(0, -1px);
+}
