@@ -27,6 +27,19 @@ a:hover {
     user-select: none;
 }
 
+#hiddenCheckbox{
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0; /* so it's hidden */
+    z-index: 2; /* so it'll be on top of the menu div that's holding our spans */
+    -webkit-touch-callout: none; /* Disables the callout when a target is touched and held on iPhone OS, Safari */
+}
+
 /*hamburger based on the hamburger @ https://codepen.io/erikterwan/pen/EVzeRP */
 /* all of the bars of the hamburger */
 #menu span {
@@ -35,12 +48,22 @@ a:hover {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background-color: #cdcdcd; /* TODO change this to a css variable so it's easy to style this for other projects */
+  background: #232323; /* TODO change this to a css variable so it's easy to style this for other projects */
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menu span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menu span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
 }
 
 /* top bar of the hamburger 
@@ -48,6 +71,7 @@ this would be applied to all of the spans when the input is checked, but the oth
 #menu input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
 }
 
 /* middle bar of the hamburger */
@@ -58,12 +82,44 @@ this ignores grandchildren, so if the child elements have children themselves, t
 if the element at that place is of the type declared, then it gets the style applied to it
 otherwise the style is ignored */
 
-#menu input:checked ~ span:nth-last-child(2) {
+#menu input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 /* bottom bar of the hamburger */
-#menu input:checked ~ span:nth-last-child(1) {
+#menu input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
+}
+
+#navMenu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#navMenu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menu input:checked ~ ul
+{
+  transform: none;
 }
