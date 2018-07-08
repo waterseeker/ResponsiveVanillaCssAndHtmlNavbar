@@ -1,5 +1,32 @@
 /* mobile first, make the media query for large screens, not small ones */
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: silver; /* TODO change this to a css variable so it's easy to style this for other projects */
+  color: black;
+}
+
+a {
+  text-decoration: none; /* to remove the default underlining and coloring of a elements */
+  color: blueviolet; /* TODO change this to a css variable so it's easy to style this for other projects */
+  transition: color 0.4s ease-in-out;
+}
+
+a:hover {
+  color: aquamarine; /* TODO change this to a css variable so it's easy to style this for other projects */
+}
+
+#menu{
+    display: block;
+    position: relative;
+    top: 25px;
+    left: 25px;
+    z-index: 1; /* we're setting this so we can position things on top of this when our hidden checkbox is checked */
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 /*hamburger based on the hamburger @ https://codepen.io/erikterwan/pen/EVzeRP */
 /* all of the bars of the hamburger */
 #menu span {
@@ -8,7 +35,7 @@
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background-color: #cdcdcd;
+  background-color: #cdcdcd; /* TODO change this to a css variable so it's easy to style this for other projects */
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
