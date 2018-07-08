@@ -10,6 +10,13 @@
 }
 
 /* middle bar of the hamburger */
+/* [element]:nth-last-child(n)
+looks for the element type declared inside a parent element
+counting from the last element in that family up, starting with 1 for the last element 
+this ignores grandchildren, so if the child elements have children themselves, they won't be counted in the index
+if the element at that place is of the type declared, then it gets the style applied to it
+otherwise the style is ignored */
+
 #menu input:checked ~ span:nth-last-child(3)
 {
     opacity: 0;
