@@ -1,15 +1,22 @@
+/* css variables for easy re-styling to match different color schemes */
+:root {
+    --main-color:#516626;
+    --main-color-analogous-1: #316626;
+    --main-color-analogous-2: #666126;
+}
+
 /* mobile first, make the media query for large screens, not small ones */
 
 body {
   margin: 0;
   padding: 0;
-  background-color: silver; /* TODO change this to a css variable so it's easy to style this for other projects */
-  color: black;
+  background-color: var(--main-color);
+  color: silver;
 }
 
 a {
   text-decoration: none; /* to remove the default underlining and coloring of a elements */
-  color: blueviolet; /* TODO change this to a css variable so it's easy to style this for other projects */
+  color: var(--main-color-analogous-2);
   transition: color 0.4s ease-in-out;
 }
 
@@ -95,7 +102,7 @@ otherwise the style is ignored */
 #navMenu
 {
   position: absolute;
-  width: 300px;
+  width: 100%;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
