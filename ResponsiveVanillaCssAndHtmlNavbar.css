@@ -1,8 +1,8 @@
 /* css variables for easy re-styling to match different color schemes */
 :root {
-    --main-color:#516626;
-    --main-color-analogous-1: #316626;
-    --main-color-analogous-2: #666126;
+    --main-color:#73ffb9;
+    --main-color-analogous-1: #96ff73;
+    --main-color-analogous-2: #73bbff;
 }
 
 /* mobile first, make the media query for large screens, not small ones */
@@ -106,8 +106,8 @@ otherwise the style is ignored */
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  
-  background: #ededed;
+  /*background-color: var(--main-color-analogous-2);*/
+  background-color: grey;
   list-style-type: none;
   -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
   
