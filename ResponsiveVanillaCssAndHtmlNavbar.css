@@ -3,6 +3,7 @@
     --main-color:#73ffb9;
     --main-color-analogous-1: #96ff73;
     --main-color-analogous-2: #73bbff;
+    --link-hover-color: aquamarine;
 }
 
 /* mobile first, make the media query for large screens, not small ones */
@@ -21,8 +22,7 @@ a {
 }
 
 a:hover {
-  color: aquamarine; /* TODO change this to a css variable so it's easy to style this for other projects */
-}
+  color: var(--link-hover-color);}
 
 #menu{
     display: block;
@@ -106,7 +106,6 @@ otherwise the style is ignored */
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  /*background-color: var(--main-color-analogous-2);*/
   background-color: grey;
   list-style-type: none;
   -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
@@ -129,4 +128,19 @@ otherwise the style is ignored */
 #menu input:checked ~ ul
 {
   transform: none;
+}
+
+/* media query for larger screens */
+@media only screen and (min-width: 600px)
+{
+  /* hide the hamburger */
+  #menu span 
+  {
+    display: none;
+  }
+
+  #navMenu
+  {
+
+  }
 }
